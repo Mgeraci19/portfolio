@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { Project } from '../types';
 
@@ -59,4 +58,3 @@ export function Projects() {
   );
 };
 
-export default Projects; 

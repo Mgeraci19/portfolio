@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { SocialLink } from '../types';
 
@@ -75,4 +74,3 @@ export function Footer() {
   );
 };
 
-export default Footer; 
