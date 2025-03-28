@@ -15,7 +15,7 @@ interface Education {
   description: string;
 }
 
-const Resume: React.FC = () => {
+export function Resume() {
   const experiences: Experience[] = [
     {
       company: 'Company 1',
@@ -101,4 +101,4 @@ const Resume: React.FC = () => {
   );
 };
 
-export default Resume; 
+    

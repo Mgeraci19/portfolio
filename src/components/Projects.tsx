@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Project } from '../types';
 
-const Projects: React.FC = () => {
+export function Projects() {
   const projects: Project[] = [
     {
       id: 1,

@@ -7,7 +7,7 @@ interface ContactForm {
   message: string;
 }
 
-const Contact: React.FC = () => {
+export function Contact() {
   const [formData, setFormData] = useState<ContactForm>({
     name: '',
     email: '',
@@ -118,6 +118,5 @@ const Contact: React.FC = () => {
       </div>
     </div>
   );
-};
+}
 
-export default Contact; 

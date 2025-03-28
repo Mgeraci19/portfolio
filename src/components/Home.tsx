@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Skill, Project } from '../types';
 
-const Home: React.FC = () => {
+export function Home() {
   const skills: Skill[] = [
     {
       name: 'Frontend Development',
@@ -118,4 +118,3 @@ const Home: React.FC = () => {
   );
 };
 
-export default Home; 

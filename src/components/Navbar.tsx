@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { NavItem } from '../types';
-
-const Navbar: React.FC = () => {
+export function Navbar() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const navItems: NavItem[] = [
@@ -83,4 +82,3 @@ const Navbar: React.FC = () => {
   );
 };
 
-export default Navbar; 

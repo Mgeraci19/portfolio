@@ -1,13 +1,13 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Home from './components/Home';
-import Projects from './components/Projects';
-import Resume from './components/Resume';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
+import {Navbar} from './components/Navbar';
+import {Home} from './components/Home';
+import {Projects} from './components/Projects';
+import {Resume} from './components/Resume';
+import {Contact} from './components/Contact';
+import {Footer} from './components/Footer';
 
-const App: React.FC = () => {
+function App() {
   return (
     <Router>
       <div className="min-h-screen bg-gray-100">
@@ -24,6 +24,6 @@ const App: React.FC = () => {
       </div>
     </Router>
   );
-};
+}
 
 export default App; 

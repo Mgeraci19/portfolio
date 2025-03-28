@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { SocialLink } from '../types';
 
-const Footer: React.FC = () => {
+export function Footer() {
   const socialLinks: SocialLink[] = [
     { name: 'GitHub', url: 'https://github.com/yourusername' },
     { name: 'LinkedIn', url: 'https://linkedin.com/in/yourusername' },
