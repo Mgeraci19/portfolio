@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { NavItem } from '../types';
+
 export function Navbar() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
@@ -10,6 +11,7 @@ export function Navbar() {
     { name: 'Projects', path: '/projects' },
     { name: 'Resume', path: '/resume' },
     { name: 'Contact', path: '/contact' },
+    { name: 'Play Game', path: '/game' },
   ];
 
   return (
