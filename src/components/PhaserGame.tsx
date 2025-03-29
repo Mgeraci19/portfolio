@@ -97,31 +97,38 @@ class PongScene extends Phaser.Scene {
     }).setOrigin(0.5);
 
     // Setup keyboard controls
-    this.cursors = this.input.keyboard.createCursorKeys();
-    this.input.keyboard.on('keydown-SPACE', () => {
-      if (!this.gameStarted) {
-        this.gameStarted = true;
-        this.startText.setVisible(false);
-        this.startBall();
-      }
-    });
+    if (this.input.keyboard) {
+      this.cursors = this.input.keyboard.createCursorKeys();
+      this.input.keyboard.on('keydown-SPACE', () => {
+        if (!this.gameStarted) {
+          this.gameStarted = true;
+          this.startText.setVisible(false);
+          this.startBall();
+        }
+      });
+    }
   }
 
   update() {
     if (!this.gameStarted) return;
 
     // Move paddles
-    if (this.input.keyboard.addKey('W').isDown && this.paddle1.y > this.PADDLE_HEIGHT / 2) {
-      this.paddle1.y -= 10;
-    }
-    if (this.input.keyboard.addKey('S').isDown && this.paddle1.y < this.GAME_HEIGHT - this.PADDLE_HEIGHT / 2) {
-      this.paddle1.y += 10;
-    }
-    if (this.cursors.up.isDown && this.paddle2.y > this.PADDLE_HEIGHT / 2) {
-      this.paddle2.y -= 10;
-    }
-    if (this.cursors.down.isDown && this.paddle2.y < this.GAME_HEIGHT - this.PADDLE_HEIGHT / 2) {
-      this.paddle2.y += 10;
+    if (this.input.keyboard) {
+      const wKey = this.input.keyboard.addKey('W');
+      const sKey = this.input.keyboard.addKey('S');
+      
+      if (wKey.isDown && this.paddle1.y > this.PADDLE_HEIGHT / 2) {
+        this.paddle1.y -= 10;
+      }
+      if (sKey.isDown && this.paddle1.y < this.GAME_HEIGHT - this.PADDLE_HEIGHT / 2) {
+        this.paddle1.y += 10;
+      }
+      if (this.cursors.up.isDown && this.paddle2.y > this.PADDLE_HEIGHT / 2) {
+        this.paddle2.y -= 10;
+      }
+      if (this.cursors.down.isDown && this.paddle2.y < this.GAME_HEIGHT - this.PADDLE_HEIGHT / 2) {
+        this.paddle2.y += 10;
+      }
     }
 
     // Ball collision with paddles
@@ -208,16 +215,20 @@ class PongScene extends Phaser.Scene {
       this.gameStarted = false;
       this.startText.setText('Player 1 Wins!\nPress SPACE to Play Again');
       this.startText.setVisible(true);
-      this.input.keyboard.once('keydown-SPACE', () => {
-        this.resetGame();
-      });
+      if (this.input.keyboard) {
+        this.input.keyboard.once('keydown-SPACE', () => {
+          this.resetGame();
+        });
+      }
     } else if (this.score2 >= this.WIN_SCORE) {
       this.gameStarted = false;
       this.startText.setText('Player 2 Wins!\nPress SPACE to Play Again');
       this.startText.setVisible(true);
-      this.input.keyboard.once('keydown-SPACE', () => {
-        this.resetGame();
-      });
+      if (this.input.keyboard) {
+        this.input.keyboard.once('keydown-SPACE', () => {
+          this.resetGame();
+        });
+      }
     }
   }
 }
