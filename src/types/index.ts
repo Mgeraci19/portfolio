@@ -14,6 +14,8 @@ export interface Project {
   description: string;
   imageUrl: string;
   link: string;
+  technologies?: string[];
+  isExternal?: boolean;
 }
 
 export interface Skill {

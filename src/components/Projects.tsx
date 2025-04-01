@@ -1,35 +1,42 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { Project } from '../types';
 
 export function Projects() {
   const projects: Project[] = [
     {
       id: 1,
-      title: 'Project 1',
-      description: 'A detailed description of your first project. Explain the technologies used and your role.',
-      imageUrl: '',
-      link: 'https://github.com/yourusername/project1',
+      title: 'Classic Pong Game',
+      description: 'A modern implementation of the classic Pong game built with Phaser.js and React. Features include:\n- Two-player local gameplay\n- Progressive difficulty with increasing ball speed\n- Smooth animations and physics\n- Responsive design\n- Built with TypeScript for type safety\n- Uses Phaser.js for game engine and React for integration',
+      imageUrl: '/portfolio/images/pong-game.png',
+      link: '/projects/pong',
+      technologies: ['React', 'TypeScript', 'Phaser.js', 'HTML5 Canvas'],
+      isExternal: false
     },
     {
       id: 2,
-      title: 'Project 2',
-      description: 'A detailed description of your second project. Explain the technologies used and your role.',
-      imageUrl: '',
-      link: 'https://github.com/yourusername/project2',
+      title: 'Agentic Chatbot',
+      description: 'Built a GenAI chatbot prototype for a Deloitte initiative, using OpenAI Function Calling on a Flask backend for intelligent query routing and a scalable Node.js, React, and TypeScript front end.',
+      imageUrl: '/portfolio/images/chatbot-placeholder.png',
+      link: '#',
+      technologies: ['React', 'TypeScript', 'Flask', 'OpenAI API', 'Node.js'],
+      isExternal: false
     },
     {
       id: 3,
-      title: 'Project 3',
-      description: 'A detailed description of your third project. Explain the technologies used and your role.',
-      imageUrl: '',
-      link: 'https://github.com/yourusername/project3',
-    },
+      title: 'Personal Portfolio Website',
+      description: 'A modern, responsive portfolio website built with React and Tailwind CSS. Features smooth animations, responsive design, and a clean, professional layout.',
+      imageUrl: '/portfolio/images/portfolio-placeholder.png',
+      link: 'https://github.com/Mgeraci19/portfolio',
+      technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
+      isExternal: true
+    }
   ];
 
   return (
-    <div className="py-12">
+    <div className="py-12 px-4 max-w-6xl mx-auto">
       <h1 className="text-4xl font-bold text-center mb-12">My Projects</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 gap-12">
         {projects.map((project, index) => (
           <motion.div
             key={project.id}
@@ -38,18 +45,40 @@ export function Projects() {
             transition={{ duration: 0.5, delay: index * 0.2 }}
             className="bg-white rounded-lg shadow-md overflow-hidden"
           >
-            <div className="h-48 bg-gray-200"></div>
+            <div className="relative h-64 bg-gray-900">
+              <img
+                src={project.imageUrl}
+                alt={project.title}
+                className="absolute inset-0 w-full h-full object-contain"
+              />
+            </div>
             <div className="p-6">
               <h2 className="text-2xl font-semibold mb-4">{project.title}</h2>
-              <p className="text-gray-600 mb-4">{project.description}</p>
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-indigo-600 hover:text-indigo-800"
-              >
-                View Project →
-              </a>
+              <p className="text-gray-600 mb-4 whitespace-pre-line">{project.description}</p>
+              <div className="flex flex-wrap gap-2 mb-4">
+                {project.technologies?.map((tech: string, i: number) => (
+                  <span key={i} className="px-3 py-1 bg-gray-100 rounded-full text-sm text-gray-600">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+              {project.isExternal ? (
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-indigo-600 hover:text-indigo-800 inline-flex items-center"
+                >
+                  View Project →
+                </a>
+              ) : (
+                <Link
+                  to={project.link}
+                  className="text-indigo-600 hover:text-indigo-800 inline-flex items-center"
+                >
+                  View Project →
+                </Link>
+              )}
             </div>
           </motion.div>
         ))}

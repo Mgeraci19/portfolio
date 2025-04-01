@@ -10,8 +10,6 @@ export function Navbar() {
     { name: 'Home', path: '/' },
     { name: 'Projects', path: '/projects' },
     { name: 'Resume', path: '/resume' },
-    { name: 'Contact', path: '/contact' },
-    { name: 'Play Game', path: '/game' },
   ];
 
   return (
@@ -20,7 +18,7 @@ export function Navbar() {
         <div className="flex justify-between h-16">
           <div className="flex items-center">
             <Link to="/" className="text-xl font-bold text-gray-800">
-              Your Name
+              Michael Geraci
             </Link>
           </div>
           

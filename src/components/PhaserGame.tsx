@@ -268,19 +268,6 @@ export function PhaserGame() {
   }, []);
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen w-full bg-gray-900">
-      <div className="max-w-[800px] w-full mx-auto px-4">
-        <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-white mb-2">Classic Pong</h1>
-          <p className="text-gray-300 text-lg">
-            A two-player classic game where you control paddles to hit the ball back and forth.
-            First player to reach 5 points wins!
-          </p>
-        </div>
-        <div className="relative w-full aspect-[4/3] bg-gray-800 rounded-lg overflow-hidden shadow-xl">
-          <div id="game-container" className="absolute inset-0" />
-        </div>
-      </div>
-    </div>
+    <div id="game-container" />
   );
 } 
