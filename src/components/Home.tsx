@@ -30,11 +30,12 @@ export function Home() {
     },
     {
       id: 2,
-      title: 'Portfolio Website',
-      description: 'A modern, responsive portfolio website built with React and Tailwind CSS, showcasing my projects and professional experience.',
-      imageUrl: '/portfolio/images/portfolio-placeholder.png',
-      link: '/projects',
-      technologies: ['React', 'TypeScript', 'Tailwind CSS']
+      title: 'TypeCoder',
+      description: 'A web application that helps developers improve their typing speed and accuracy by practicing with real code snippets.',
+      imageUrl: '/portfolio/images/type-coder.png',
+      link: 'https://mgeraci19.github.io/Type-Coder/',
+      technologies: ['Next.js', 'TypeScript', 'Tailwind CSS'],
+      isExternal: true
     },
   ];
 

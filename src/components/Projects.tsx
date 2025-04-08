@@ -15,22 +15,13 @@ export function Projects() {
     },
     {
       id: 2,
-      title: 'Agentic Chatbot',
-      description: 'Built a GenAI chatbot prototype for a Deloitte initiative, using OpenAI Function Calling on a Flask backend for intelligent query routing and a scalable Node.js, React, and TypeScript front end.',
-      imageUrl: '/portfolio/images/chatbot-placeholder.png',
-      link: '#',
-      technologies: ['React', 'TypeScript', 'Flask', 'OpenAI API', 'Node.js'],
-      isExternal: false
-    },
-    {
-      id: 3,
-      title: 'Personal Portfolio Website',
-      description: 'A modern, responsive portfolio website built with React and Tailwind CSS. Features smooth animations, responsive design, and a clean, professional layout.',
-      imageUrl: '/portfolio/images/portfolio-placeholder.png',
-      link: 'https://github.com/Mgeraci19/portfolio',
-      technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
+      title: 'TypeCoder',
+      description: 'A web application that helps developers improve their typing speed and accuracy by practicing with real code snippets.',
+      imageUrl: '/portfolio/images/type-coder.png',
+      link: 'https://mgeraci19.github.io/Type-Coder/',
+      technologies: ['Next.js', 'TypeScript', 'Tailwind CSS'],
       isExternal: true
-    }
+    },
   ];
 
   return (
