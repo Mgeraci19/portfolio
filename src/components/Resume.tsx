@@ -16,9 +16,6 @@ import {
   SiGithub,
   SiJira,
   SiLinkedin,
-  SiGmail,
-  SiDocker,
-  SiKubernetes,
   SiJenkins,
   SiPostgresql,
   SiMongodb,
@@ -27,10 +24,7 @@ import {
   SiCoder,
   SiGitlab,
   SiScrumalliance,
-  SiTrello,
-  SiTableau,
-  SiConfluence,
-  SiSlack
+
 } from 'react-icons/si';
 
 interface Experience {
